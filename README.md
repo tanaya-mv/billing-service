@@ -4,30 +4,6 @@ A deliberately tiny Java/Maven service that exists only to make the
 CI/CD demo real: a `build` -> `test` -> `secret-scan` pipeline you can
 run locally with `act`, then break in two specific ways.
 
-## One-time setup
-
-```bash
-cd billing-service
-git init
-git add .
-git commit -m "clean starting point"
-git tag clean-start          # your restore point
-```
-
-To restore to the clean state at any point during the demo:
-
-```bash
-git reset --hard clean-start
-```
-
-## Sanity check before the session
-
-```bash
-mvn clean compile      # should succeed
-mvn test                # should pass (1 test)
-act -j build            # should succeed (needs Docker running)
-gitleaks detect --source . -v   # should find nothing yet
-```
 
 ## Demo 1 — hardcoded secret (Slide 18)
 
