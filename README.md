@@ -8,9 +8,7 @@ run locally with `act`, then break in two specific ways.
 ## Demo 1 — hardcoded secret (Slide 18)
 
 1. Add a fake credential to `src/main/resources/application.properties`:
-   ```
-   aws.secret.key=AKIAABCDEFGHIJKLMNOP
-   ```
+ 
 2. Show it still compiles and tests still pass:
    ```bash
    mvn clean compile && mvn test
